@@ -1,0 +1,20 @@
+template(name="landing")
+  .landing
+    .landing__content
+      h1.landing__logo.ui.text.huge datarockets library
+      if isSignedIn
+        button.landing__go-to-app.ui.green.button.big Go to app
+      else
+        button.landing__login.ui.google.plus.button.big
+          i.google.plus.icon
+          | Sign in with Google
+
+    .landing__video-container
+      .landing__video-filter
+      video.landing__video(autoplay='', loop='')
+        source(src='images/login.mp4', type='video/mp4')
+        | Your browser does not support the video tag. I suggest you upgrade your browser.
+        source(src='images/login.webm', type='video/webm')
+        | Your browser does not support the video tag. I suggest you upgrade your browser.
+    .landing__poster.landing__poster--hidden
+      img(src='images/login.jpg', alt='')
