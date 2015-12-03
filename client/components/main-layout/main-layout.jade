@@ -1,0 +1,19 @@
+head
+  meta(http-equiv="cleartype" content="on")
+  meta(name="MobileOptimized" content="320")
+  meta(name="HandheldFriendly" content="True")
+  meta(name="apple-mobile-web-app-capable" content="yes")
+  meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no")
+
+template(name="mainLayout")
+  .ui.menu
+    .header.item datarockers library
+    .right.menu
+      .item
+        .ui.action.left.icon.input
+          i.search.icon
+          input(type='text', placeholder='Enter book name')
+          button.ui.button Search
+
+  .ui.container
+    Template.dynamic(template=content)
