@@ -1,0 +1,34 @@
+template(name="book")
+  .book.card
+    .extra.content
+      img.ui.avatar.image(src=ownerData.profile.photo)
+      = ownerData.profile.name
+
+    .book__image.image
+      img(src=cover)
+
+    .content
+      .book__name.header= name
+      //- .meta
+        a Book
+      .description= author
+
+    if readerData
+      .extra.content
+        .description Сейчас читает
+          a.ui.image.label
+            img(src=readerData.profile.photo)
+            =readerData.profile.name
+    else
+      .extra.content
+        .description Прочитало 0 человек
+
+    .extra.content
+      .ui.buttons
+        if reader
+          button.ui.button.small.blue.basic(class="book__request") Request to take
+        else
+          button.ui.button.small.teal.basic(class="book__get") Get
+
+        if isOwner
+          button.ui.button.icon.basic.orange(class="book__edit") Edit
