@@ -27,3 +27,6 @@ kadira:blaze-layout
 accounts-google
 service-configuration
 msavin:mongol
+aldeed:autoform
+aldeed:collection2
+dburles:collection-helpers
