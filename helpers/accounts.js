@@ -10,6 +10,13 @@ if (Meteor.isServer) {
             },
             { upsert: true }
         );
+    });
 
+    Accounts.onCreateUser((options, user) => {
+        user.profile = options.profile;
+        user.profile.photo = user.services.google.picture;
+        user.profile.email = user.services.google.email;
+
+        return user;
     });
 }
