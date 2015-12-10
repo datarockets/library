@@ -25,10 +25,16 @@ template(name="book")
 
     .extra.content
       .ui.buttons
-        if reader
-          button.ui.button.small.blue.basic(class="book__request") Request to take
-        else
-          button.ui.button.small.teal.basic(class="book__get") Get
+        if mayRequest
+          button.ui.button.small.blue.basic(class="book__request")
+            | Request
+            i.icon.mail.outlined.right
+
+        unless reader
+          button.ui.button.small.blue.basic(class="book__get") Get
+
+        if isReader
+          button.ui.button.small.teal.basic(class="book__read") Read
 
         if isOwner
           button.ui.button.icon.basic.orange(class="book__edit") Edit
