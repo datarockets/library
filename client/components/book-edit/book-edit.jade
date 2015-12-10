@@ -1,0 +1,7 @@
+template(name="editBook")
+  +autoForm(collection="Books" doc=this id="editBookForm" type="update" template="semanticUI" trimStrings="true")
+    +afQuickField(name='name' value=name)
+    +afQuickField(name='author' value=author)
+    +afQuickField(name='cover' value=cover)
+    +afQuickField(name='ownerId' options=userOptions value=ownerId)
+    button.ui.button.teal(type="submit") Save
