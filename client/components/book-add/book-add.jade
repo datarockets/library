@@ -1,0 +1,7 @@
+template(name="addBook")
+  +autoForm(collection="Books" id="addBookForm" type="insert" template="semanticUI" trimStrings="true")
+    +afQuickField(name='name' placeholder="Enter a book name")
+    +afQuickField(name='author' placeholder="Enter a book author")
+    +afQuickField(name='cover' placeholder="Enter a link of book cover")
+    +afQuickField(name='ownerId' options=userOptions defaultValue=currentUser._id fullTextSearch="true")
+    button.ui.button.teal(type="submit") Save
