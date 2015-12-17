@@ -20,5 +20,12 @@ Template.book.events({
                 // Bert.alert(error.reason, 'danger', 'growl-top-right');
             }
         });
+    },
+    "click .book__finish"() {
+        Meteor.call('finishBook', this._id, (error, result) => {
+            if (error) {
+
+            }
+        });
     }
 });
