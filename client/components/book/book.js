@@ -27,5 +27,12 @@ Template.book.events({
 
             }
         });
+    },
+    "click .book__request"() {
+        Meteor.call("requestBook", this._id, (error, result) => {
+            if (error) {
+
+            }
+        });
     }
 });
